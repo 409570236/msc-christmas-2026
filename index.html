@@ -91,9 +91,10 @@ let tab='itinerary',day=dates[2],more='';const $=s=>document.querySelector(s),es
     {id:'oki5',date:dates[2],time:'12:45',title:'瀨長島 → 沖繩媳婦 → 美國村',place:'沖繩媳婦：沖縄県那覇市曙１丁目４−8 コーポあけぼの',locationType:'shore',mapQuery:'沖繩媳婦 沖縄県那覇市曙1丁目4-8 コーポあけぼの',note:'整段交通與停留共抓 1 小時；沖繩媳婦停留 15 分鐘，之後前往美國村，預計 13:45 抵達。'},
     {id:'oki6',date:dates[2],time:'13:45',title:'美國村自由活動',place:'美國村・美浜アメリカンビレッジ',locationType:'shore',note:'預計停留至 15:20，約 1 小時 35 分鐘。'},
     {id:'oki7',date:dates[2],time:'15:20',title:'前往國際通・包車結束',place:'國際通',locationType:'shore',note:'預估車程 40 分鐘，約 16:00 抵達國際通；包車於 16:00 結束，總計 8 小時。'},
+    {id:'oki9',date:dates[2],time:'16:20',title:'Midnight Sweets 真夜中スイーツ 國際通り店',place:'Midnight Sweets 真夜中スイーツ 国際通り店',locationType:'shore',mapQuery:'Midnight Sweets 真夜中スイーツ 国際通り店 沖縄',note:'回到國際通後可安排甜點／下午茶，預計停留至 17:30 左右；營業時間及當日供應請出發前確認。'},
     {id:'oki8',date:dates[2],time:'17:45',title:'搭計程車返回郵輪碼頭',place:'那霸郵輪碼頭',locationType:'shore',note:'17:45 從國際通出發搭計程車回碼頭，預留交通及登船緩衝；務必依船上公告確認最晚登船時間。'}
   ];
-  db.events=db.events.filter(x=>x.id!=='port3'&&!/^oki[1-8]$/.test(x.id));
+  db.events=db.events.filter(x=>x.id!=='port3'&&!/^oki[1-9]$/.test(x.id));
   db.events.push(...okinawa);
   localStorage.setItem('okinawaPlan2026v2','1');
   localStorage.setItem(KEY,JSON.stringify(db));
