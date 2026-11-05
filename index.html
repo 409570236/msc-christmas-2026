@@ -94,7 +94,7 @@ let tab='itinerary',day=dates[2],more='';const $=s=>document.querySelector(s),es
     {id:'oki8',date:dates[2],time:'13:30',title:'美國村・Kijimuna 午餐＋逛街',place:'Taco Rice Cafe Kijimuna タコライスcafe きじむなぁ デポアイランド店',locationType:'shore',mapQuery:'Taco Rice Cafe Kijimuna Depot Island Chatan Okinawa',note:'瀨長島依實際離開時間前往美國村，午餐吃招牌蛋包塔可飯（Omutaco），用餐後在 Depot Island／美國村逛街、拍照及買伴手禮。抵達時間依方案及路況調整。'},
     {id:'oki9',date:dates[2],time:'15:45',title:'前往國際通・包車結束',place:'國際通',locationType:'shore',note:'美國村出發前往國際通，車程依當日路況調整。若包車為 8 小時，08:30 出發約 16:30 結束；請與司機確認實際包車時數及還車地點。'},
     {id:'oki10',date:dates[2],time:'16:40',title:'Midnight Sweets 真夜中スイーツ 國際通り店',place:'Midnight Sweets 真夜中スイーツ 国際通り店',locationType:'shore',mapQuery:'Midnight Sweets 真夜中スイーツ 国際通り店 沖縄',note:'抵達國際通後可安排甜點／下午茶，時間依前段行程及店家營業狀況調整。'},
-    {id:'oki11',date:dates[2],time:'17:45',title:'搭計程車返回郵輪碼頭',place:'那霸郵輪碼頭',locationType:'shore',note:'預留交通及登船緩衝；務必依船上公告確認最晚登船時間（All Aboard），不要只看郵輪離港時間。'}
+    {id:'oki11',date:dates[2],time:'17:20',title:'出發返回郵輪碼頭',place:'那霸郵輪碼頭',locationType:'shore',note:'17:20 從國際通往郵輪碼頭方向出發，預留交通及登船緩衝；務必依船上公告確認最晚登船時間（All Aboard），不要只看郵輪離港時間。'}
   ];
   db.events=db.events.filter(x=>x.id!=='port3'&&!/^oki[1-9]$/.test(x.id));
   db.events.push(...okinawa);
