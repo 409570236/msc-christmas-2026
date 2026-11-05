@@ -84,15 +84,17 @@ let tab='itinerary',day=dates[2],more='';const $=s=>document.querySelector(s),es
 // Okinawa shore-day itinerary: always upsert so existing browser data receives corrections.
 {
   const okinawa=[
-    {id:'oki1',date:dates[2],time:'08:00',title:'郵輪碼頭出發・包車開始',place:'那霸郵輪碼頭',locationType:'shore',note:'包車時段 08:00–16:00，共 8 小時；不安排波上宮。實際上車位置依船方靠泊碼頭確認。'},
-    {id:'oki2',date:dates[2],time:'09:00',title:'DMM Kariyushi 水族館',place:'DMM Kariyushi Aquarium',locationType:'shore',note:'預計 09:00 抵達，參觀至 11:30（2.5 小時）。08:00–09:00 為碼頭前往水族館及交通緩衝。'},
-    {id:'oki3',date:dates[2],time:'11:30',title:'前往瀨長島',place:'瀨長島 Umikaji Terrace',locationType:'shore',note:'預估車程 15 分鐘。'},
-    {id:'oki4',date:dates[2],time:'11:45',title:'幸福鬆餅・瀨長島',place:'幸せのパンケーキ ウミカジテラス 沖縄店',locationType:'shore',note:'排隊＋用餐合計抓 1 小時，預計 12:45 離開。'},
-    {id:'oki5',date:dates[2],time:'12:45',title:'前往美國村',place:'美國村・美浜アメリカンビレッジ',locationType:'shore',note:'瀨長島離開後直接前往美國村，車程依當日路況調整；取消原訂鰻魚飯餐廳。'},
-    {id:'oki6',date:dates[2],time:'13:45',title:'Taco Rice Cafe Kijimuna 美國村店・午餐＋逛街',place:'Taco Rice Cafe Kijimuna タコライスcafe きじむなぁ デポアイランド店',locationType:'shore',mapQuery:'Taco Rice Cafe Kijimuna Depot Island Chatan Okinawa',note:'午餐吃招牌蛋包塔可飯（Omutaco），用餐後在 Depot Island／美國村逛街、拍照及買伴手禮，預計停留至 15:20。'},
-    {id:'oki7',date:dates[2],time:'15:20',title:'前往國際通・包車結束',place:'國際通',locationType:'shore',note:'預估車程 40 分鐘，約 16:00 抵達國際通；包車於 16:00 結束，總計 8 小時。'},
-    {id:'oki9',date:dates[2],time:'16:20',title:'Midnight Sweets 真夜中スイーツ 國際通り店',place:'Midnight Sweets 真夜中スイーツ 国際通り店',locationType:'shore',mapQuery:'Midnight Sweets 真夜中スイーツ 国際通り店 沖縄',note:'回到國際通後可安排甜點／下午茶，預計停留至 17:30 左右；營業時間及當日供應請出發前確認。'},
-    {id:'oki8',date:dates[2],time:'17:45',title:'搭計程車返回郵輪碼頭',place:'那霸郵輪碼頭',locationType:'shore',note:'17:45 從國際通出發搭計程車回碼頭，預留交通及登船緩衝；務必依船上公告確認最晚登船時間。'}
+    {id:'oki1',date:dates[2],time:'08:30',title:'郵輪碼頭出發・包車開始',place:'那霸郵輪碼頭',locationType:'shore',note:'08:30 預約包車，先直接前往護國神社與沖宮。若包車仍採 8 小時計算，預計 16:30 結束；上車位置依船方靠泊碼頭確認。'},
+    {id:'oki2',date:dates[2],time:'08:45',title:'沖繩護國神社',place:'沖繩縣護國神社',locationType:'shore',mapQuery:'Okinawa Gokoku Shrine Naha',note:'先參拜護國神社，與沖宮都安排在最前段；神社行程最晚 10:00 必須離開。'},
+    {id:'oki3',date:dates[2],time:'09:00',title:'預約 DMM 水族館體驗券',place:'DMM Kariyushi Aquarium',locationType:'shore',mapQuery:'DMM Kariyushi Aquarium Okinawa',note:'09:00 準備透過水族館體驗預約頁預約餵食／拍照體驗券，建議事先備妥網路與付款方式，依現場可預約時段及名額為準。'},
+    {id:'oki4',date:dates[2],time:'09:20',title:'沖宮',place:'沖宮 Okino-gu',locationType:'shore',mapQuery:'Okino-gu Shrine Naha Okinawa',note:'參拜沖宮後直接前往 DMM Kariyushi 水族館；護國神社與沖宮合計行程最晚 10:00 離開。'},
+    {id:'oki5',date:dates[2],time:'10:15',title:'DMM Kariyushi 水族館・體驗',place:'DMM Kariyushi Aquarium',locationType:'shore',mapQuery:'DMM Kariyushi Aquarium Okinawa',note:'神社離開後前往水族館，依預約時段參加體驗並參觀。最晚 12:00 離開；若 11:30 就能離開，瀨長島可安排幸福鬆餅；若到 12:00 才離開，瀨長島改為 30 分鐘快閃、不吃鬆餅。'},
+    {id:'oki6',date:dates[2],time:'11:45',title:'瀨長島・幸福鬆餅（11:30 離館方案）',place:'幸せのパンケーキ ウミカジテラス 沖縄店',locationType:'shore',mapQuery:'A Happy Pancake Senagajima Okinawa',note:'【方案 A】水族館若於 11:30 離開，車程約 15 分鐘，抵達後安排幸福鬆餅，預留排隊及用餐時間，之後前往美國村。若水族館 12:00 才離開，請改走方案 B，不安排鬆餅。'},
+    {id:'oki7',date:dates[2],time:'12:15',title:'瀨長島 30 分鐘快閃（12:00 離館方案）',place:'瀨長島 Umikaji Terrace',locationType:'shore',mapQuery:'Umikaji Terrace Senagajima Okinawa',note:'【方案 B】水族館若到 12:00 才離開，前往瀨長島只停留 30 分鐘，看看海景、拍照及上洗手間，不吃鬆餅，之後直接前往美國村。此方案與幸福鬆餅方案二選一，不需兩個都排。'},
+    {id:'oki8',date:dates[2],time:'13:30',title:'美國村・Kijimuna 午餐＋逛街',place:'Taco Rice Cafe Kijimuna タコライスcafe きじむなぁ デポアイランド店',locationType:'shore',mapQuery:'Taco Rice Cafe Kijimuna Depot Island Chatan Okinawa',note:'瀨長島依實際離開時間前往美國村，午餐吃招牌蛋包塔可飯（Omutaco），用餐後在 Depot Island／美國村逛街、拍照及買伴手禮。抵達時間依方案及路況調整。'},
+    {id:'oki9',date:dates[2],time:'15:45',title:'前往國際通・包車結束',place:'國際通',locationType:'shore',note:'美國村出發前往國際通，車程依當日路況調整。若包車為 8 小時，08:30 出發約 16:30 結束；請與司機確認實際包車時數及還車地點。'},
+    {id:'oki10',date:dates[2],time:'16:40',title:'Midnight Sweets 真夜中スイーツ 國際通り店',place:'Midnight Sweets 真夜中スイーツ 国際通り店',locationType:'shore',mapQuery:'Midnight Sweets 真夜中スイーツ 国際通り店 沖縄',note:'抵達國際通後可安排甜點／下午茶，時間依前段行程及店家營業狀況調整。'},
+    {id:'oki11',date:dates[2],time:'17:45',title:'搭計程車返回郵輪碼頭',place:'那霸郵輪碼頭',locationType:'shore',note:'預留交通及登船緩衝；務必依船上公告確認最晚登船時間（All Aboard），不要只看郵輪離港時間。'}
   ];
   db.events=db.events.filter(x=>x.id!=='port3'&&!/^oki[1-9]$/.test(x.id));
   db.events.push(...okinawa);
