@@ -96,7 +96,7 @@ let tab='itinerary',day=dates[2],more='';const $=s=>document.querySelector(s),es
     {id:'oki10',date:dates[2],time:'16:40',title:'Midnight Sweets 真夜中スイーツ 國際通り店',place:'Midnight Sweets 真夜中スイーツ 国際通り店',locationType:'shore',mapQuery:'Midnight Sweets 真夜中スイーツ 国際通り店 沖縄',note:'抵達國際通後可安排甜點／下午茶，時間依前段行程及店家營業狀況調整。'},
     {id:'oki11',date:dates[2],time:'17:15',title:'搭計程車返回郵輪碼頭',place:'那霸郵輪碼頭',locationType:'shore',note:'17:15 從國際通搭計程車往郵輪碼頭方向出發，預留交通及登船緩衝；務必依船上公告確認最晚登船時間（All Aboard），不要只看郵輪離港時間。'}
   ];
-  db.events=db.events.filter(x=>x.id!=='port3'&&!/^oki\\d+$/.test(x.id));
+  db.events=db.events.filter(x=>x.id!=='port3'&&!/^oki\d+$/.test(x.id));
   db.events.push(...okinawa);
   localStorage.setItem('okinawaPlan2026v2','1');
   localStorage.setItem(KEY,JSON.stringify(db));
