@@ -97,15 +97,16 @@ let tab='itinerary',day=dates[2],more='';const $=s=>document.querySelector(s),es
     {id:'oki11',date:dates[2],time:'17:15',title:'搭計程車返回郵輪碼頭',place:'那霸郵輪碼頭',locationType:'shore',note:'17:15 從國際通搭計程車往郵輪碼頭方向出發，預留交通及登船緩衝；務必依船上公告確認最晚登船時間（All Aboard），不要只看郵輪離港時間。'}
   ];
   const miyakoBus=[
-    {id:'mmy1',date:dates[1],time:'09:00',title:'🚌 巴士共乘一日遊・港口集合',place:'宮古島平良港',locationType:'shore',mapQuery:'Hirara Port Miyakojima',bookingStatus:'巴士共乘一日遊',note:'12/25 宮古島行程 B。郵輪預計 08:00 抵港，09:00 集合；中文導遊、每人礦泉水 1 瓶及行車期間旅遊保險。成人 NT$1,400／人。25 人成團、45 人滿團。'},
-    {id:'mmy2',date:dates[1],time:'09:20',title:'🚌 宮古島神社',place:'宮古神社 Miyako Jinja',locationType:'shore',mapQuery:'Miyako Jinja Miyakojima Okinawa',bookingStatus:'停留約 20 分鐘',note:'第一站參拜宮古島神社，可參拜、拍照。停留時間依當日交通及團體狀況調整。'},
-    {id:'mmy3',date:dates[1],time:'10:00',title:'🚌 永旺商圈・午餐自理',place:'AEON Town Miyako Minami',locationType:'shore',mapQuery:'AEON Town Miyako Minami Okinawa',bookingStatus:'停留約 90 分鐘',note:'第二站用餐及自由活動，餐費自理。建議先用餐，再安排簡單逛街；不需把全部時間花在購物。'},
-    {id:'mmy4',date:dates[1],time:'11:45',title:'🚌 宮古島海中公園',place:'Miyakojima Marine Park',locationType:'shore',mapQuery:'Miyakojima Marine Park Okinawa',bookingStatus:'停留約 60 分鐘・門票自理',note:'第三站海中觀察設施，可從水下觀察窗欣賞魚群與海底景觀，不需下水。門票不包含在巴士費用內；海中公園門票 15 人以上團體價請向旅行社確認，現場或依導遊安排購票。'},
-    {id:'mmy5',date:dates[1],time:'13:00',title:'🚌 雪鹽工廠',place:'Miyakojima Snow Salt Museum',locationType:'shore',mapQuery:'Miyakojima Snow Salt Museum Ikema Okinawa',bookingStatus:'停留約 40 分鐘',note:'第四站了解宮古島雪鹽特色，可視現場安排參觀、試吃及購買伴手禮；個人購物費用自理。'},
-    {id:'mmy6',date:dates[1],time:'14:00',title:'🚌 池間大橋＋小商店街',place:'Ikema Bridge and Ikema Island',locationType:'shore',mapQuery:'Ikema Bridge Miyakojima Okinawa',bookingStatus:'停留約 50 分鐘',note:'第五站欣賞池間大橋與宮古島代表性藍色海景，並在附近小商店街短暫逛逛、拍照；個人消費自理。'},
-    {id:'mmy7',date:dates[1],time:'15:30',title:'🚌 巴士返回平良港・準備登船',place:'平良港 Hirara Port',locationType:'shore',mapQuery:'Hirara Port Miyakojima',bookingStatus:'預計 16:00 回港',note:'依海報安排預計 16:00 回到港口，保留登船緩衝。以上各站時間為依停留時間推估的行程參考，實際抵達順序與時間依旅行社當日安排、交通及路況為準。'}
-  ];
-  db.events=db.events.filter(x=>x.id!=='port3'&&!/^oki\d+$/.test(x.id)&&!/^mmy\d+$/.test(x.id));
+    {id:'mmy1',date:dates[1],time:'09:00',title:'🚌 宮古島巴士共乘 A 團・港口集合出發',place:'宮古島平良港',locationType:'shore',mapQuery:'Hirara Port Miyakojima',bookingStatus:'A 團・待確認成團',note:'12/25 MSC 冬季航程適用團。郵輪預計 08:00 抵港，預計 09:00 集合出發、16:00 回港。中文導遊、每人礦泉水 1 瓶、行車期間保險。成人 NT$1,400／人；3–12 歲 NT$1,200；3 歲以下抱著免費。25 人成團、45 人滿團。景點門票及個人餐費自理。'},
+    {id:'mmy2',date:dates[1],time:'09:20',title:'🚌 牧山展望台',place:'牧山展望台 Makiyama Observatory',locationType:'shore',mapQuery:'Makiyama Observatory Irabu Miyakojima',bookingStatus:'停留約 40 分鐘',note:'A 團第一站。從展望台欣賞伊良部島海岸與伊良部大橋景色，安排拍照。實際抵達時間依當日交通及導遊調度。'},
+    {id:'mmy3',date:dates[1],time:'10:10',title:'🚌 伊良部大橋・沿途解說',place:'伊良部大橋 Irabu Bridge',locationType:'shore',mapQuery:'Irabu Bridge Miyakojima Okinawa',bookingStatus:'巴士經過・車上解說',note:'行車經過伊良部大橋，由導遊沿途解說；此站不是下車停留景點。'},
+    {id:'mmy4',date:dates[1],time:'10:40',title:'🚌 前濱沙灘',place:'與那霸前濱海灘 Yonaha Maehama Beach',locationType:'shore',mapQuery:'Yonaha Maehama Beach Miyakojima',bookingStatus:'停留約 40 分鐘',note:'欣賞宮古島代表性的白沙灘與清澈海水，可散步、拍照；請留意海邊安全及集合時間。'},
+    {id:'mmy5',date:dates[1],time:'11:30',title:'🚌 宮古纜車',place:'宮古纜車（設施名稱及位置待旅行社確認）',locationType:'shore',mapQuery:'Miyakojima sightseeing cable car',bookingStatus:'停留約 45 分鐘・費用 ¥500／人',note:'依旅行社行程表安排，纜車費用自理，約 ¥500／人。設施正式名稱、實際位置及是否必須搭乘，出發前請向旅行社確認。'},
+    {id:'mmy6',date:dates[1],time:'12:20',title:'🚌 德國文化村',place:'上野德國文化村 Ueno German Culture Village',locationType:'shore',mapQuery:'Ueno German Culture Village Miyakojima',bookingStatus:'停留約 50 分鐘',note:'參觀德國文化村及周邊海岸景觀，拍照散步；個人消費自理。'},
+    {id:'mmy7',date:dates[1],time:'13:20',title:'🚌 永旺超市商場・午餐自理＋購物',place:'AEON Town Miyako Minami',locationType:'shore',mapQuery:'AEON Town Miyako Minami Okinawa',bookingStatus:'停留約 1.5–2 小時',note:'用餐及自由購物，餐費與個人消費自理。可購買日本零食、飲料及伴手禮；建議留意集合時間。'},
+    {id:'mmy8',date:dates[1],time:'15:30',title:'🚌 宮古島神社',place:'宮古神社 Miyako Jinja',locationType:'shore',mapQuery:'Miyako Jinja Miyakojima Okinawa',bookingStatus:'停留約 20 分鐘',note:'A 團最後一站，參拜宮古島神社及拍照。若當日行程對調，請依導遊通知為準。'},
+    {id:'mmy9',date:dates[1],time:'16:00',title:'🚌 巴士返回平良港・準備登船',place:'平良港 Hirara Port',locationType:'shore',mapQuery:'Hirara Port Miyakojima',bookingStatus:'預計 16:00 回港',note:'旅行社預計 16:00 返回港口，郵輪 18:00 啟航。各景點時間為參考安排，當日可能因交通、天候及團體狀況調整順序或停留時間；請以導遊通知為準。'}
+  ];  db.events=db.events.filter(x=>x.id!=='port3'&&!/^oki\d+$/.test(x.id)&&!/^mmy\d+$/.test(x.id));
   db.events.push(...okinawa);
   db.events.push(...miyakoBus);
   localStorage.setItem('okinawaPlan2026v2','1');
