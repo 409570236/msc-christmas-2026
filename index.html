@@ -116,8 +116,9 @@ let tab='itinerary',day=dates[2],more='';const $=s=>document.querySelector(s),es
     {id:'ish6',date:dates[3],time:'15:45',title:'市區逛街・Euglena Mall',place:'Euglena Mall／石垣市公設市場周邊',locationType:'shore',mapQuery:'Euglena Mall Ishigaki Okinawa',note:'逛商店街及伴手禮店。注意 12/27/2026 是第四個星期日，公設市場可能休市，周邊店家請依個別營業狀況確認。'},
     {id:'ish7',date:dates[3],time:'16:15',title:'ゲンキみるく・牛乳布丁',place:'ゲンキみるく 美崎町店',locationType:'shore',mapQuery:'ゲンキみるく 美崎町店 石垣市美崎町3-3',note:'吃石垣島生乳布丁，也可看看生乳冰淇淋及牛奶麵包。官方店舖資訊營業時間 11:00–21:00。'},
     {id:'ish8',date:dates[3],time:'16:45',title:'知念商會・名物飯糰（オニササ）',place:'知念商会',locationType:'shore',mapQuery:'知念商会 石垣市登野城1249-18',note:'買石垣島名物オニササ：將飯糰與炸雞柳／炸物放入袋中，搭配醬料組合食用。店家營業時間資料為 07:00–19:00；熱門品項可能提早售完，抵達後先購買。'},
-    {id:'ish9',date:dates[3],time:'17:15',title:'唐吉訶德 Don Quijote 石垣島店',place:'ドン・キホーテ 石垣島店',locationType:'shore',mapQuery:'Don Quijote Ishigaki Ohama 462-1',note:'最後採買日本零食、藥妝及伴手禮。地址：石垣市大浜 462-1。官方營業時間 08:00–02:00；建議控制購物時間，預留回港交通。'},
-    {id:'ish10',date:dates[3],time:'17:50',title:'搭計程車返回郵輪碼頭',place:'石垣島新港郵輪碼頭',locationType:'shore',mapQuery:'Ishigaki New Port Cruise Terminal Okinawa',note:'預計 17:50 從唐吉訶德出發，目標 18:15 前回到郵輪碼頭。郵輪 19:00 離港，實際 All Aboard 最晚回船時間以船上公告為準；請事先預約計程車並保留緩衝。'}
+    {id:'ish9',date:dates[3],time:'17:15',title:'730 COURT・市區購物與散步',place:'730 COURT',locationType:'shore',mapQuery:'730 COURT Ishigaki Okawa 1',note:'取代原本較遠的唐吉訶德行程。逛 730 十字路口旁的複合商場、伴手禮店及特色店家；官方設施時間約 09:00–23:00，各店營業時間不同。'},
+    {id:'ish10',date:dates[3],time:'17:45',title:'HEART LAND 美崎町店・石垣牛漢堡晚餐',place:'HEART LAND 石垣牛バーガー専門店 美崎町店',locationType:'shore',mapQuery:'HEART LAND 石垣市美崎町3-2-4',note:'晚餐吃 JA 認定店石垣牛漢堡。地址：石垣市美崎町 3-2-4，參考營業時間 11:00–20:30（最後點餐約 20:00）。建議預留約 35–45 分鐘；因郵輪當晚 19:00 離港，請務必先確認船上 All Aboard 時間，若 18:15 前必須回船，需把晚餐提前或改外帶。'},
+    {id:'ish11',date:dates[3],time:'18:20',title:'搭計程車返回郵輪碼頭',place:'石垣島新港郵輪碼頭',locationType:'shore',mapQuery:'Ishigaki New Port Cruise Terminal Okinawa',note:'預計 18:20 從美崎町出發，目標 18:40 前回到郵輪碼頭。郵輪 19:00 離港，實際 All Aboard 最晚回船時間以船上公告為準；若船方要求更早回船，請優先縮短 730 COURT 或改為外帶漢堡。'}
   ];
   db.events=db.events.filter(x=>x.id!=='port3'&&!/^oki\d+$/.test(x.id)&&!/^mmy\d+$/.test(x.id)&&!/^ish\d+$/.test(x.id));
   db.events.push(...okinawa);
