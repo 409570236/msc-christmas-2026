@@ -106,9 +106,23 @@ let tab='itinerary',day=dates[2],more='';const $=s=>document.querySelector(s),es
     {id:'mmy7',date:dates[1],time:'13:20',title:'🚌 永旺超市商場・午餐自理＋購物',place:'AEON Town Miyako Minami',locationType:'shore',mapQuery:'AEON Town Miyako Minami Okinawa',bookingStatus:'停留約 1.5–2 小時',note:'用餐及自由購物，餐費與個人消費自理。可購買日本零食、飲料及伴手禮；建議留意集合時間。'},
     {id:'mmy8',date:dates[1],time:'15:30',title:'🚌 宮古島神社',place:'宮古神社 Miyako Jinja',locationType:'shore',mapQuery:'Miyako Jinja Miyakojima Okinawa',bookingStatus:'停留約 20 分鐘',note:'A 團最後一站，參拜宮古島神社及拍照。若當日行程對調，請依導遊通知為準。'},
     {id:'mmy9',date:dates[1],time:'16:00',title:'🚌 巴士返回平良港・準備登船',place:'平良港 Hirara Port',locationType:'shore',mapQuery:'Hirara Port Miyakojima',bookingStatus:'預計 16:00 回港',note:'旅行社預計 16:00 返回港口，郵輪 18:00 啟航。各景點時間為參考安排，當日可能因交通、天候及團體狀況調整順序或停留時間；請以導遊通知為準。'}
-  ];  db.events=db.events.filter(x=>x.id!=='port3'&&!/^oki\d+$/.test(x.id)&&!/^mmy\d+$/.test(x.id));
+  ];
+  const ishigaki=[
+    {id:'ish1',date:dates[3],time:'10:30',title:'下船・直接前往燒肉店',place:'石垣島新港郵輪碼頭',locationType:'shore',mapQuery:'Ishigaki New Port Cruise Terminal Okinawa',note:'預計 10:30 下船，出港後直接搭計程車前往焼肉 おおつか本店。郵輪 09:00 抵港，實際下船時間依船方安排。'},
+    {id:'ish2',date:dates[3],time:'11:00',title:'焼肉 おおつか本店・石垣牛午餐',place:'焼肉 おおつか 本店',locationType:'shore',mapQuery:'焼肉 おおつか 本店 沖縄県石垣市大川270-2',note:'預約 11:00 用餐，建議預留約 75 分鐘。地址：沖繩縣石垣市大川 270-2。官方營業時間 11:00–22:30，仍請以預約確認為準。'},
+    {id:'ish3',date:dates[3],time:'12:15',title:'搭計程車前往石垣やいま村',place:'石垣やいま村',locationType:'shore',mapQuery:'Ishigaki Yaima Village Okinawa',note:'燒肉用餐後直接搭計程車前往やいま村，車程約 20–30 分鐘，依路況調整。建議事先安排回程接送。'},
+    {id:'ish4',date:dates[3],time:'12:45',title:'石垣やいま村・松鼠猴與琉球古民家',place:'石垣やいま村 Ishigaki Yaima Village',locationType:'shore',mapQuery:'Ishigaki Yaima Village Okinawa',bookingStatus:'預計停留約 2.5 小時',note:'重點看松鼠猴森林、琉球傳統紅瓦古民家、紅樹林自然步道及園內動物。營業時間資料為 09:00–17:30，入園後先確認表演時段；停留時間可依現場調整。'},
+    {id:'ish5',date:dates[3],time:'15:15',title:'搭計程車返回市區',place:'石垣市區・Euglena Mall',locationType:'shore',mapQuery:'Euglena Mall Ishigaki Okinawa',note:'從やいま村返回市區，車程約 20–30 分鐘。建議預約司機接送，避免在郊區臨時叫不到車。'},
+    {id:'ish6',date:dates[3],time:'15:45',title:'市區逛街・Euglena Mall',place:'Euglena Mall／石垣市公設市場周邊',locationType:'shore',mapQuery:'Euglena Mall Ishigaki Okinawa',note:'逛商店街及伴手禮店。注意 12/27/2026 是第四個星期日，公設市場可能休市，周邊店家請依個別營業狀況確認。'},
+    {id:'ish7',date:dates[3],time:'16:15',title:'ゲンキみるく・牛乳布丁',place:'ゲンキみるく 美崎町店',locationType:'shore',mapQuery:'ゲンキみるく 美崎町店 石垣市美崎町3-3',note:'吃石垣島生乳布丁，也可看看生乳冰淇淋及牛奶麵包。官方店舖資訊營業時間 11:00–21:00。'},
+    {id:'ish8',date:dates[3],time:'16:45',title:'知念商會・名物飯糰（オニササ）',place:'知念商会',locationType:'shore',mapQuery:'知念商会 石垣市登野城1249-18',note:'買石垣島名物オニササ：將飯糰與炸雞柳／炸物放入袋中，搭配醬料組合食用。店家營業時間資料為 07:00–19:00；熱門品項可能提早售完，抵達後先購買。'},
+    {id:'ish9',date:dates[3],time:'17:15',title:'唐吉訶德 Don Quijote 石垣島店',place:'ドン・キホーテ 石垣島店',locationType:'shore',mapQuery:'Don Quijote Ishigaki Ohama 462-1',note:'最後採買日本零食、藥妝及伴手禮。地址：石垣市大浜 462-1。官方營業時間 08:00–02:00；建議控制購物時間，預留回港交通。'},
+    {id:'ish10',date:dates[3],time:'17:50',title:'搭計程車返回郵輪碼頭',place:'石垣島新港郵輪碼頭',locationType:'shore',mapQuery:'Ishigaki New Port Cruise Terminal Okinawa',note:'預計 17:50 從唐吉訶德出發，目標 18:15 前回到郵輪碼頭。郵輪 19:00 離港，實際 All Aboard 最晚回船時間以船上公告為準；請事先預約計程車並保留緩衝。'}
+  ];
+  db.events=db.events.filter(x=>x.id!=='port3'&&!/^oki\d+$/.test(x.id)&&!/^mmy\d+$/.test(x.id)&&!/^ish\d+$/.test(x.id));
   db.events.push(...okinawa);
   db.events.push(...miyakoBus);
+  db.events.push(...ishigaki);
   localStorage.setItem('okinawaPlan2026v2','1');
   localStorage.setItem(KEY,JSON.stringify(db));
 }
